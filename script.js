@@ -4,6 +4,32 @@
    Shared Website JavaScript
    ========================================================= */
 
+function setTheme(dark) {
+    document.body.classList.toggle("dark-mode", dark);
+
+    localStorage.setItem("darkMode", dark ? "dark" : "light");
+
+    const button = document.getElementById("darkModeToggle");
+
+    if (button) {
+        button.textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+}
+
+function toggleDarkMode() {
+    const isDark = document.body.classList.contains("dark-mode");
+    setTheme(!isDark);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("darkMode");
+
+    if (savedTheme === "dark") {
+        setTheme(true);
+    } else {
+        setTheme(false);
+    }
+});
 
 /* =========================================================
    COLLAPSIBLE SECTIONS
