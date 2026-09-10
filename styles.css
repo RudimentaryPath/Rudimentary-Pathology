@@ -4,6 +4,28 @@
    Shared Website Styles
    ========================================================= */
 
+:root {
+    --background: #ffffff;
+    --text: #000000;
+    --section-background: #f5f5f5;
+    --header-background: #e5e5e5;
+    --border: #cccccc;
+    --link-color: #0066cc;
+}
+
+body.dark-mode {
+    --background: #000000;
+    --text: #ffffff;
+    --section-background: #111111;
+    --header-background: #222222;
+    --border: #555555;
+    --link-color: #66aaff;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
 
 /* =========================================================
    BASIC PAGE SETUP
@@ -22,8 +44,8 @@ body {
         Helvetica,
         sans-serif;
 
-    background: #f4f4f4;
-    color: #222;
+    background: var(--background);
+    color: var(--text);
 
     line-height: 1.6;
 }
@@ -71,7 +93,7 @@ h3 {
    ========================================================= */
 
 a {
-    color: #0066cc;
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -127,9 +149,9 @@ nav a:hover {
    ========================================================= */
 
 .collapsible {
-    background: white;
+    background: var(--section-background);
 
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
 
     border-radius: 8px;
 
@@ -161,7 +183,7 @@ nav a:hover {
 /* Hover effect */
 
 .collapsible-header:hover {
-    background: #f0f0f0;
+    background: var(--header-background);
 }
 
 
@@ -191,7 +213,7 @@ nav a:hover {
 
     padding: 5px 20px 20px 20px;
 
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border);
 }
 
 
@@ -267,14 +289,11 @@ nav a:hover {
    ========================================================= */
 
 .info-section {
-
     margin: 10px 0;
 
-    border:
-        1px solid #ddd;
+    border: 1px solid var(--border);
 
     border-radius: 6px;
-
 }
 
 
@@ -303,7 +322,7 @@ nav a:hover {
 
 .info-box {
 
-    background: #f8f8f8;
+    background: var(--section-background);
 
     padding: 15px;
 
@@ -488,9 +507,9 @@ nav a:hover {
 
 .subject-card {
 
-    background: white;
+    background: var(--section-background);
 
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
 
     border-radius: 8px;
 
