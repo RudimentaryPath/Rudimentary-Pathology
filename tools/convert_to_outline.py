@@ -418,7 +418,8 @@ def convert_page(path):
 
     # load outline.js before script.js
     out = re.sub(r'(\s*)(<script src="([./]*)script\.js"></script>)',
-                 lambda m: f'{m.group(1)}<script src="{m.group(3)}outline.js"></script>{m.group(1)}{m.group(2)}',
+                 lambda m: f'{m.group(1)}<script src="{m.group(3)}outline.js"></script>'
+                           f'{m.group(1)}<script src="{m.group(3)}search.js"></script>{m.group(1)}{m.group(2)}',
                  out, count=1)
 
     open(path, 'w', encoding='utf8').write(out)

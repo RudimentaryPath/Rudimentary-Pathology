@@ -645,3 +645,117 @@ nav a:hover {
     }
 
 }
+
+
+/* =========================================================
+   PAGE SEARCH (search.js)
+   ========================================================= */
+
+.page-search {
+    position: relative;
+
+    margin: 0 0 20px 0;
+}
+
+.page-search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.page-search-input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 16px;
+
+    font-size: 16px;
+    font-family: inherit;
+
+    color: var(--text);
+    background: var(--background);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.page-search-input:focus {
+    outline: none;
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.25);
+}
+
+.page-search-results {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+
+    max-height: 360px;
+    overflow-y: auto;
+
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.page-search-results li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    margin: 0;
+    padding: 9px 16px;
+
+    cursor: pointer;
+}
+
+.page-search-results li.active {
+    background: var(--header-background);
+}
+
+.page-search-title {
+    font-weight: bold;
+}
+
+.page-search-title mark {
+    color: inherit;
+    background: none;
+    text-decoration: underline;
+    text-decoration-color: var(--link-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.page-search-path {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.page-search-results .page-search-empty {
+    cursor: default;
+    opacity: 0.7;
+}
+
+/* brief highlight on the tab you jumped to */
+
+.collapsible.search-flash > .collapsible-header {
+    animation: search-flash 2.2s ease-out;
+}
+
+@keyframes search-flash {
+    0%, 35% { background: rgba(0, 102, 204, 0.28); }
+    100%    { background: transparent; }
+}
+
+.collapsible {
+    scroll-margin-top: 16px;
+}
